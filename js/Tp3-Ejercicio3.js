@@ -3,13 +3,26 @@
 //de los lanzamientos de los dados. Sumar el resultado de lanzar dos dados y
 //anotar en un array el número de apariciones de dicha suma, repitiendo 50 veces esta operación.
 
-const aparicionesSuma = [];
+// Creamos el array manualmente para las sumas del 2 al 12 (11 elementos)
+const apariciones = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+// índice 0 → suma 2, índice 1 → suma 3, ..., índice 10 → suma 12
 
-for (let i = 0; i <= 50; i++) {
+// Simulamos 50 lanzamientos
+for (let i = 0; i < 50; i++) {
   const dado1 = Math.floor(Math.random() * 6) + 1;
   const dado2 = Math.floor(Math.random() * 6) + 1;
   const suma = dado1 + dado2;
 
-  aparicionesSuma.unshift(suma);
+  // Incrementamos en la posición correspondiente: suma - 2
+  apariciones[suma - 2]++;
 }
-console.log(aparicionesSuma);
+
+// Mostramos la tabla HTML
+document.writeln(`<table border="1" style="text-align:center">`);
+document.writeln(`<tr><th>Suma 🎲🎲</th><th>Apariciones</th></tr>`);
+
+for (let i = 0; i < apariciones.length; i++) {
+  document.writeln(`<tr><td>${i + 2}</td><td>${apariciones[i]}</td></tr>`);
+}
+
+document.writeln(`</table>`);
