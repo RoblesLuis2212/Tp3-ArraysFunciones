@@ -18,7 +18,7 @@ for (let i = 0; i < 50; i++) {
 }
 
 // Mostramos la tabla HTML
-document.writeln(`<table border="1" style="text-align:center">`);
+document.writeln(`<table>`);
 document.writeln(`<tr><th>Suma 🎲🎲</th><th>Apariciones</th></tr>`);
 
 for (let i = 0; i < apariciones.length; i++) {
