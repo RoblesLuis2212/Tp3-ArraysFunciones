@@ -3,7 +3,13 @@
 //de los lanzamientos de los dados. Sumar el resultado de lanzar dos dados y
 //anotar en un array el número de apariciones de dicha suma, repitiendo 50 veces esta operación.
 
-const dado1 = Math.floor(Math.random() * 6) + 1;
-const dado2 = Math.floor(Math.random() * 6) + 1;
+const aparicionesSuma = [];
 
-const suma = dado1 + dado2;
+for (let i = 0; i <= 50; i++) {
+  const dado1 = Math.floor(Math.random() * 6) + 1;
+  const dado2 = Math.floor(Math.random() * 6) + 1;
+  const suma = dado1 + dado2;
+
+  aparicionesSuma.unshift(suma);
+}
+console.log(aparicionesSuma);
